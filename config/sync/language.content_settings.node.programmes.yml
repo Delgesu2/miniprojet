@@ -1,0 +1,11 @@
+uuid: 1f602dc2-2810-47aa-93b1-283835f7c612
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.programmes
+id: node.programmes
+target_entity_type_id: node
+target_bundle: programmes
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,19 @@
+uuid: cb836e5e-8aaa-4543-ac46-e2a002ba68ad
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_et_but_du_prog
+    - node.type.programmes
+id: node.programmes.field_description_et_but_du_prog
+field_name: field_description_et_but_du_prog
+entity_type: node
+bundle: programmes
+label: 'Description et but du programme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,21 @@
+uuid: 79dfed17-7fba-4e9d-b5e1-755e9545c369
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_de_debut
+    - node.type.programmes
+  module:
+    - datetime
+id: node.programmes.field_date_de_debut
+field_name: field_date_de_debut
+entity_type: node
+bundle: programmes
+label: 'Date de début'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

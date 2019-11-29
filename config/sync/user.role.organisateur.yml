@@ -1,0 +1,9 @@
+uuid: 4b4f0687-13a7-4cb4-9eed-87f3eca26492
+langcode: fr
+status: true
+dependencies: {  }
+id: organisateur
+label: Organisateur
+weight: 4
+is_admin: null
+permissions: {  }
