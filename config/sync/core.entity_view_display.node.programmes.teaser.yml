@@ -18,4 +18,11 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_budget: true
+  field_date_de_debut: true
+  field_date_de_fin: true
+  field_description_et_but_du_prog: true
+  field_organisateurs_du_programme: true
+  field_participants_au_programme: true
+  field_titre_du_programme: true
   langcode: true
