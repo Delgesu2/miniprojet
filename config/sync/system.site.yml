@@ -1,0 +1,14 @@
+uuid: 9d051079-c7e5-46ab-a09e-c35c4ecbe56f
+name: miniprojet
+mail: xavierus70@hotmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
