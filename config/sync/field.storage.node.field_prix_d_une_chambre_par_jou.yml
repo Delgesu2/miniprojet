@@ -1,0 +1,18 @@
+uuid: 6a62b9af-269a-43be-b999-5d99eb57ce7e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_prix_d_une_chambre_par_jou
+field_name: field_prix_d_une_chambre_par_jou
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

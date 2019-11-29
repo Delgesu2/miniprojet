@@ -1,0 +1,23 @@
+uuid: f24c5972-0bcc-4b90-9f00-c8dc870daeaa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_telephone
+    - node.type.hotels
+id: node.hotels.field_telephone
+field_name: field_telephone
+entity_type: node
+bundle: hotels
+label: Téléphone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

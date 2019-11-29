@@ -1,0 +1,33 @@
+uuid: f0f67594-0529-4dd2-9226-0d16f85e9430
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_participants_au_programme
+    - node.type.programmes
+id: node.programmes.field_participants_au_programme
+field_name: field_participants_au_programme
+entity_type: node
+bundle: programmes
+label: 'Participants au programme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        participant: participant
+        administrator: '0'
+        organisateur: '0'
+        webmaster: '0'
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

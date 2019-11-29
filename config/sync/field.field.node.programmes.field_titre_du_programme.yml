@@ -1,0 +1,19 @@
+uuid: 16558f21-0213-4cd0-bfd0-5c5845d8c3da
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titre_du_programme
+    - node.type.programmes
+id: node.programmes.field_titre_du_programme
+field_name: field_titre_du_programme
+entity_type: node
+bundle: programmes
+label: 'Titre du programme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
