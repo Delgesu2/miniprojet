@@ -18,4 +18,10 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_adresse: true
+  field_description_hotel: true
+  field_email: true
+  field_prix_d_une_chambre_par_jou: true
+  field_telephone: true
+  field_titre_hotel: true
   langcode: true
