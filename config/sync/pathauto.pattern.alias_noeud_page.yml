@@ -1,0 +1,22 @@
+uuid: d1c5dac8-3c89-4cb1-b0bf-bd2d4ed484e3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: alias_noeud_page
+label: 'alias noeud programmes'
+type: 'canonical_entities:node'
+pattern: '/programmes/[node:title]'
+selection_criteria:
+  aa753009-6354-4120-8fc2-035047c1ab84:
+    id: node_type
+    bundles:
+      programmes: programmes
+    negate: false
+    context_mapping:
+      node: node
+    uuid: aa753009-6354-4120-8fc2-035047c1ab84
+selection_logic: and
+weight: -5
+relationships: {  }

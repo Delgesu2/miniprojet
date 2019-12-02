@@ -4,6 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.programmes.field_budget
+    - field.field.node.programmes.field_date_de_debut
+    - field.field.node.programmes.field_date_de_fin
+    - field.field.node.programmes.field_description_et_but_du_prog
+    - field.field.node.programmes.field_hotels
+    - field.field.node.programmes.field_organisateurs_du_programme
+    - field.field.node.programmes.field_participants_au_programme
+    - field.field.node.programmes.field_titre_du_programme
     - node.type.programmes
   module:
     - user
@@ -12,17 +20,30 @@ targetEntityType: node
 bundle: programmes
 mode: teaser
 content:
-  links:
-    weight: 100
+  content_moderation_control:
+    weight: 0
+    region: content
     settings: {  }
     third_party_settings: {  }
+  field_titre_du_programme:
+    type: string
+    weight: 3
     region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_budget: true
   field_date_de_debut: true
   field_date_de_fin: true
   field_description_et_but_du_prog: true
+  field_hotels: true
   field_organisateurs_du_programme: true
   field_participants_au_programme: true
-  field_titre_du_programme: true
   langcode: true

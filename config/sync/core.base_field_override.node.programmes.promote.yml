@@ -1,0 +1,22 @@
+uuid: ee375fc7-21d2-4d1e-b497-c2490430e87b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.programmes
+id: node.programmes.promote
+field_name: promote
+entity_type: node
+bundle: programmes
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

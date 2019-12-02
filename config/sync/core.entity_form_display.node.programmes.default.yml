@@ -7,11 +7,14 @@ dependencies:
     - field.field.node.programmes.field_date_de_debut
     - field.field.node.programmes.field_date_de_fin
     - field.field.node.programmes.field_description_et_but_du_prog
+    - field.field.node.programmes.field_hotels
     - field.field.node.programmes.field_organisateurs_du_programme
     - field.field.node.programmes.field_participants_au_programme
     - field.field.node.programmes.field_titre_du_programme
     - node.type.programmes
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - datetime
     - path
 id: node.programmes.default
@@ -52,6 +55,12 @@ content:
     third_party_settings: {  }
     type: string_textarea
     region: content
+  field_hotels:
+    weight: 128
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_organisateurs_du_programme:
     weight: 126
     settings:
@@ -84,6 +93,12 @@ content:
     region: content
     settings:
       include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
     third_party_settings: {  }
   path:
     type: path

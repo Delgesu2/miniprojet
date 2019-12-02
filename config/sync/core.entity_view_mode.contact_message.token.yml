@@ -1,0 +1,10 @@
+uuid: f6d2a897-45e1-487f-9ad5-5b1b33660d74
+langcode: fr
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.token
+label: 'Jeton (token)'
+targetEntityType: contact_message
+cache: true

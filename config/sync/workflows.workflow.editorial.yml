@@ -1,0 +1,92 @@
+uuid: 8f026de0-4c44-4f0b-9e14-70558d70ae46
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.hotels
+    - node.type.programmes
+  module:
+    - content_moderation
+_core:
+  default_config_hash: Ln7YAg2WXZ-5wn9ib-v9qOKFxF2YZLnwSKtX-V455hE
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    _a_aalider:
+      published: false
+      default_revision: false
+      label: ' A Valider'
+      weight: -1
+    archived:
+      label: Archived
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -2
+    published:
+      label: Published
+      published: true
+      default_revision: true
+      weight: 0
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 0
+    archived_draft:
+      label: 'Restore to Draft'
+      from:
+        - archived
+      to: draft
+      weight: 1
+    archived_published:
+      label: Restore
+      from:
+        - archived
+      to: published
+      weight: 2
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: -3
+    en_attente_de_validation:
+      label: 'En attente de validation'
+      from:
+        - draft
+      to: _a_aalider
+      weight: 3
+    publish:
+      label: Publish
+      to: published
+      weight: -1
+      from:
+        - draft
+        - published
+    rejet_de_validation:
+      label: 'Rejet de validation'
+      from:
+        - _a_aalider
+      to: draft
+      weight: 4
+    validation:
+      label: Validation
+      from:
+        - _a_aalider
+      to: published
+      weight: -2
+  entity_types:
+    node:
+      - hotels
+      - programmes
+  default_moderation_state: draft

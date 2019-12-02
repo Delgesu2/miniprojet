@@ -1,0 +1,18 @@
+uuid: 04f75ad4-2652-4f38-bee1-7f49887da4a3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_site_personnel
+field_name: field_site_personnel
+entity_type: user
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

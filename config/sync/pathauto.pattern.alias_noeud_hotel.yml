@@ -1,0 +1,22 @@
+uuid: 617f1ab6-131d-4753-86c1-57c624452ba9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: alias_noeud_hotel
+label: 'alias noeud hotel'
+type: 'canonical_entities:node'
+pattern: '/hotels/[node:title]'
+selection_criteria:
+  65c3eefb-8af3-4abe-abe7-a6cf1a5076de:
+    id: node_type
+    bundles:
+      hotels: hotels
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 65c3eefb-8af3-4abe-abe7-a6cf1a5076de
+selection_logic: and
+weight: -5
+relationships: {  }

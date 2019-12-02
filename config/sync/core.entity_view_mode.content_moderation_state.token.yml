@@ -1,0 +1,10 @@
+uuid: b95afe27-5eb7-4ac9-a3be-ae83ad049278
+langcode: fr
+status: true
+dependencies:
+  module:
+    - content_moderation
+id: content_moderation_state.token
+label: 'Jeton (token)'
+targetEntityType: content_moderation_state
+cache: true

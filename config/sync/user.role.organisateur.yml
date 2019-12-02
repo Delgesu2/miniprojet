@@ -6,4 +6,16 @@ id: organisateur
 label: Organisateur
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create hotels content'
+  - 'create programmes content'
+  - 'delete any hotels content'
+  - 'delete any programmes content'
+  - 'delete own hotels content'
+  - 'delete own programmes content'
+  - 'edit any hotels content'
+  - 'edit any programmes content'
+  - 'edit own hotels content'
+  - 'edit own programmes content'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition en_attente_de_validation'

@@ -1,0 +1,22 @@
+uuid: 10079a1b-803c-415b-91a5-ec87a5a86498
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.programmes
+id: node.programmes.status
+field_name: status
+entity_type: node
+bundle: programmes
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

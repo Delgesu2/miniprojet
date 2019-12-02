@@ -1,0 +1,20 @@
+uuid: e239402b-1532-4061-b00f-9491ec8c83e6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_indications_particulieres
+  module:
+    - user
+id: user.user.field_indications_particulieres
+field_name: field_indications_particulieres
+entity_type: user
+bundle: user
+label: 'Indications Particulières'
+description: 'régime alimentaire, handicap etc...'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
