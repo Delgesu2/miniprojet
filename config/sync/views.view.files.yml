@@ -42,7 +42,7 @@ display:
         options:
           submit_button: Filtrer
           reset_button: false
-          reset_button_label: Réinitialiser
+          reset_button_label: Reset
           exposed_sorts_label: 'Trier par'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -302,7 +302,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Taille
+          label: Size
           exclude: false
           alter:
             alter_text: false
