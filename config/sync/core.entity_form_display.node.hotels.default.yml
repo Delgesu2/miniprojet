@@ -6,12 +6,15 @@ dependencies:
     - field.field.node.hotels.field_adresse
     - field.field.node.hotels.field_description_hotel
     - field.field.node.hotels.field_email
+    - field.field.node.hotels.field_photos
     - field.field.node.hotels.field_prix_d_une_chambre_par_jou
     - field.field.node.hotels.field_telephone
     - field.field.node.hotels.field_titre_hotel
+    - image.style.thumbnail
     - node.type.hotels
   module:
     - address
+    - image
     - path
     - text
 id: node.hotels.default
@@ -47,6 +50,14 @@ content:
     third_party_settings: {  }
     type: email_default
     region: content
+  field_photos:
+    weight: 128
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_prix_d_une_chambre_par_jou:
     weight: 126
     settings:
@@ -55,11 +66,12 @@ content:
     type: number
     region: content
   field_telephone:
-    weight: 124
+    weight: 127
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: string_textfield
     region: content
   field_titre_hotel:
     weight: 121
