@@ -42,7 +42,7 @@ display:
         options:
           submit_button: Appliquer
           reset_button: false
-          reset_button_label: Réinitialiser
+          reset_button_label: Reset
           exposed_sorts_label: 'Trier par'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -762,7 +762,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Langue
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op
@@ -1035,7 +1035,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Langue
+            label: Language
             description: ''
             use_operator: false
             operator: langcode_op
