@@ -1,0 +1,7 @@
+name: POEI
+description: Module pour projet POEI Trained People
+type: module
+core: 8.x
+version: 8.x-1.0
+package: Training
+
