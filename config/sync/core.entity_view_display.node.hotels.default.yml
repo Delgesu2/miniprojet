@@ -6,12 +6,14 @@ dependencies:
     - field.field.node.hotels.field_adresse
     - field.field.node.hotels.field_description_hotel
     - field.field.node.hotels.field_email
+    - field.field.node.hotels.field_photos
     - field.field.node.hotels.field_prix_d_une_chambre_par_jou
     - field.field.node.hotels.field_telephone
     - field.field.node.hotels.field_titre_hotel
     - node.type.hotels
   module:
     - address
+    - image
     - text
     - user
 id: node.hotels.default
@@ -40,6 +42,15 @@ content:
     third_party_settings: {  }
     type: basic_string
     region: content
+  field_photos:
+    weight: 108
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
   field_prix_d_une_chambre_par_jou:
     weight: 106
     label: above
@@ -52,13 +63,12 @@ content:
     type: number_decimal
     region: content
   field_telephone:
-    weight: 104
+    weight: 107
     label: above
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: number_integer
+    type: string
     region: content
   field_titre_hotel:
     weight: 101
@@ -70,8 +80,8 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   langcode: true

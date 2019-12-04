@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.programmes.field_date_de_debut
     - field.field.node.programmes.field_date_de_fin
     - field.field.node.programmes.field_description_et_but_du_prog
+    - field.field.node.programmes.field_inscription
     - field.field.node.programmes.field_organisateurs_du_programme
     - field.field.node.programmes.field_participants_au_programme
     - field.field.node.programmes.field_titre_du_programme
@@ -14,6 +15,7 @@ dependencies:
   module:
     - datetime
     - path
+    - webform
 id: node.programmes.default
 targetEntityType: node
 bundle: programmes
@@ -51,6 +53,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_inscription:
+    weight: 128
+    settings:
+      default_data: true
+    third_party_settings: {  }
+    type: webform_entity_reference_select
     region: content
   field_organisateurs_du_programme:
     weight: 126

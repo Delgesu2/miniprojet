@@ -1,0 +1,51 @@
+uuid: 93f7590b-c563-4d65-8260-c396e2725832
+langcode: fr
+status: true
+dependencies:
+  config:
+    - webform.webform.inscription_programme
+  module:
+    - node
+    - user
+    - webform
+  theme:
+    - bartik
+id: webform
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: visible
+  webform_id: inscription_programme
+  default_data: ''
+  redirect: false
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      programmes: programmes
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+      participant: participant
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  webform:
+    id: webform
+    webforms:
+      inscription_programme: inscription_programme
+    negate: false
+    context_mapping:
+      webform: '@webform.webform_route_context:webform'
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+      node: '@node.node_route_context:node'
