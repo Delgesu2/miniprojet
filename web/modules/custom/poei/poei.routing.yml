@@ -1,0 +1,20 @@
+#conference.programme:
+#  path: '/programme/{node}/details'
+#  defaults:
+#    title: 'Détails du programme'
+#    controller: '\Drupal\poei\Controller\PoeiController::details'
+#    node: ''
+#  requirements:
+#    _access: 'TRUE'
+
+conference.inscrits:
+  path: '/programme/{node}/participants'
+  defaults:
+    _title: 'Participants au programme'
+    _controller: '\Drupal\poei\Controller\PoeiController::content'
+  requirements:
+     _access: 'TRUE'
+#  options:
+#    parameters:
+#      node:
+#        type: entty:node

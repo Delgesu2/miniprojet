@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * @param WebformSubmissionInterface $entity
+ *
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function poei_webform_submission_update(WebformSubmissionInterface $entity)
+{
+    // Si la soumission est validée, on vérifie que l'utilisateur est déjà membre du programme.
+    $user_id = $entity->getOwnerId();
+    $members = $entity->getSourceEntity()->field_participants_au_programme->getValue();
+
+    // Si l'adhésion est acceptée et que l'utilisateur n'est PAS un membre du programme
+    if ($entity->getData()['statut'] == 'Accepté' && !in_array(['target_id' => $user_id], $members)) {
+
+        $entity->getSourceEntity()->field_participants_au_programme->setValue(
+        array_merge(
+            $members,
+            ['target_id' => $entity->getOwnerId()]
+        )
+    );
+        $entity->getSourceEntity()->save();
+
+}
+
+    // Si l'adhésion n'est PAS acceptée et que l'utilisateur est un membre du programme.
+    if ($entity->getData()['statut'] != 'Accepté' && in_array(['target_id' => $user_id], $members)) {
+
+        $key = array_search(['target_id' => $user_id], $members);
+        unset($members[$key]);
+
+        $entity->getSourceEntity()->field_participants_au_programme->setValue($members);
+        $entity->getSourceEntity()->save();
+
+    }
+}
