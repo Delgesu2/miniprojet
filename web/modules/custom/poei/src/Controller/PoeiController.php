@@ -2,38 +2,50 @@
 
 namespace Drupal\poei\Controller;
 
-use Drupal\Core\Access\AccessResult;
+use Drupal\node\NodeInterface;
 use Drupal\Core\Controller\ControllerBase;
-use Symfony\Component\Routing\Route;
 
-/**
- * Class PoeiController
- *
- * @package Drupal\poei\Controller
- */
 class PoeiController extends ControllerBase
 {
-    public function content()
+    /**
+     * @param NodeInterface $node
+     *
+     * @return array
+     *
+     * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+     * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+     * @throws \Drupal\Core\Entity\EntityMalformedException
+     */
+    public function content(NodeInterface $node)
     {
-        return['#markup' => "test"];
-//        // Manipuler la BDD
-//        $users = $this->entityTypeManager()->getStorage('je sais pas quoi')->loadMultiple();
-//
-//        foreach ($users as $user) {
-//
-//        }
+        $storage = \Drupal::entityTypeManager()->getStorage('webform_submission');
+        $datas = $storage->loadByProperties([
+            'entity_type' => 'node',
+            'entity_id' => $node->id()
+        ]);
+
+        $values = [];
+
+        foreach ($datas as $data) {
+            $values[] = [
+                $data->getData()['nom'],
+                $data->getData()['prenom'],
+                $data->getData()['addresse_mail'],
+                $data->getData()['statut'],
+                $data->toLink('Modifier', 'edit-form')
+            ];
+
+        }
+
+        $toview = [
+            '#type' => 'table',
+            '#header' => ['Nom: ', 'Prénom: ', 'Courriel: ', 'Statut'],
+            '#rows' => $values,
+            '#empty' => "Personne n'est inscrit à cette conférence."
+        ];
+
+        return $toview;
 
     }
 
-//    public function access(Route $route)
-//    {
-//        $regex = '#programme#';
-//
-//        if(preg_match($regex, $route->getPath())) {
-//            return AccessResult::allowed()->cachePerUser();
-//        }
-//
-//      // return AccessResult::forbidden()->cachePerUser();
-//
-//    }
 }

@@ -14,7 +14,7 @@ conference.inscrits:
     _controller: '\Drupal\poei\Controller\PoeiController::content'
   requirements:
      _access: 'TRUE'
-#  options:
-#    parameters:
-#      node:
-#        type: entty:node
+  options:
+    parameters:
+      node:
+        type: entity:node
