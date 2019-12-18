@@ -7,14 +7,22 @@
 #  requirements:
 #    _access: 'TRUE'
 
-conference.inscrits:
+poei.inscrits:
   path: '/programme/{node}/participants'
   defaults:
     _title: 'Participants au programme'
     _controller: '\Drupal\poei\Controller\PoeiController::content'
   requirements:
-     _access: 'TRUE'
+    _access_poei: 'TRUE'
   options:
     parameters:
       node:
         type: entity:node
+
+poei.conference:
+  path: 'user/{user}/programmes'
+  defaults:
+    _title: 'Liste des conférences'
+    _controller: '\Drupal\poei\Controller\UserInscriptionsController::show_conf_list'
+  requirements:
+    _access: 'TRUE'

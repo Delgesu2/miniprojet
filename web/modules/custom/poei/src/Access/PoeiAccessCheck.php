@@ -1,19 +1,35 @@
 <?php
-use Drupal\Core\Access\AccessCheckInterface;
+
 use Drupal\Core\Routing\RouteMatch;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Session\AccountInterface;
+use \Drupal\Core\Access\AccessResult;
+use Drupal\Core\Routing\Access\AccessInterface;
 
-class PoeiAccessCheck implements AccessCheckInterface
+/**
+ * Class PoeiAccessCheck
+ */
+class PoeiAccessCheck implements AccessInterface
 {
     public function access(
-        RouteMatch $route,
-        NodeInterface $node,
+        NodeInterface    $node,
+        RouteMatch       $route,
         AccountInterface $account
     )
     {
         $allow = false;
 
-        if ($node->bundle())
+        if ($node->bundle() === 'programmes'){
+            $organisateurs = $node->get('field_organisateurs_du_programme')->getValue();
+
+            foreach ($organisateurs as $organisateur){
+                if ($organisateur['target_id'] === $account->id()){
+                    $allow = true;
+                }
+            }
+        }
+
+        return AccessResult::allowedIf($node->bundle() === 'programmes' && $allow);
+
     }
 }

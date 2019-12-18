@@ -2,4 +2,4 @@ services:
   access_check.poei:
     class: Drupal\poei\Access\PoeiAccessCheck
     tags:
-    - { name: access_check, applies_to: _access_poei}
+      - {name: access_check, applies_to: _access_poei}

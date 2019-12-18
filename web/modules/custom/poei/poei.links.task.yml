@@ -1,11 +1,11 @@
-#conference.programme:
-#  title: Détails
-#  route_name: conference.programme
-#  base_route: entity.node.canonical
-#  weight: -10
-
-conference.inscrits:
+poei.inscrits:
   title: Participants
-  route_name: conference.inscrits
+  route_name: poei.inscrits
   base_route: entity.node.canonical
   weight: -9
+
+poei.programmes:
+  title: Programmes
+  route_name: poei.conference
+  base_route: entity.user.canonical
+  weight: -10
